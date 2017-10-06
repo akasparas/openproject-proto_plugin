@@ -282,7 +282,7 @@ The relevant files for the menu items are:
 * `lib/open_project/proto_plugin/engine.rb` - register block in the beginning
 * `app/controllers/kittens_controller.rb`
 
-Registering new user-defined menu items is easy. For instance, let's assume that you want to add a new item to the project menu. Just add the following to the `engine.rb` file:
+Registering new user-defined menu items is easy. For instance, let's assume that you want to add a new item to the project menu. Just add the following to the `engine.rb` file `register() do ... end` block:
 
 ```
 menu :project_menu,
@@ -294,7 +294,6 @@ menu :project_menu,
      icon: 'icon2 icon-bug',
      html: { id: "kittens-menu-item" },
      if: ->(project) { true }
-end
 ```
 
 You are then free to enable the "Kittens module" for a given project by going to that "Project settings" page, for example `/projects/demo-project/settings/modules` and checking the checkbox.
